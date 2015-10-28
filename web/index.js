@@ -2,7 +2,7 @@
 var app = angular.module("app", []);
 
 
-app.controller("IndexController", ['$scope', '$log', '$http', function ($scope, $log, $http) {
+app.controller("IndexController", ['$scope', '$http', function ($scope,  $http) {
 
     $http({
         method: "GET",

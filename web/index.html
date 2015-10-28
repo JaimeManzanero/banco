@@ -20,7 +20,7 @@
                 <td>Nombre</td>
             </tr>
             
-            <tr ng-repeat="entidadBancaria in entidadesBancarias | orderBy: 'nombre'">
+            <tr ng-repeat="entidadBancaria in entidadesBancarias | orderBy: 'idEntidadBancaria'">
                 <td>{{entidadBancaria.idEntidadBancaria}}</td>
                 <td><a href="get.html?idEntidadBancaria={{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>
                 <td><a href="delete.html?idEntidadBancaria={{entidadBancaria.idEntidadBancaria}}">BORRAR</a></td>
