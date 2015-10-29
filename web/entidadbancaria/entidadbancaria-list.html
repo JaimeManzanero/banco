@@ -1,0 +1,14 @@
+<div ng-controller="ListController">
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+        </tr>
+
+        <tr ng-repeat="entidadBancaria in entidadesBancarias | orderBy: 'idEntidadBancaria'">
+            <td>{{entidadBancaria.idEntidadBancaria}}</td>
+            <td><a href="#/entidadbancaria/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>
+            <td><a href="#/entidadbancaria/delete/{{entidadBancaria.idEntidadBancaria}}">BORRAR</a></td>
+        </tr>
+    </table>
+</div>

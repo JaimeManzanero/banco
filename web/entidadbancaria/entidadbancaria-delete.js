@@ -1,5 +1,5 @@
 
-var app = angular.module("app", []);
+
 
 function getParameterByName(name) {
     var regexS = "[\\?&]" + name + "=([^&#]*)",
