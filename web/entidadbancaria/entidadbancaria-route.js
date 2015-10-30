@@ -1,19 +1,29 @@
 
-app.config(['$routeProvider',function($routeProvider) {
-   
- 
-  $routeProvider.when('/entidadbancaria/list', {
-    templateUrl: "./entidadbancaria/entidadbancaria-list.html",
-    controller: "ListController"
-  });
-  
-  $routeProvider.when('/entidadbancaria/get/:idEntidadBancaria', {
-      templateUrl: "./entidadbancaria/entidadbancaria-get.html",
-      
-  });
-   
-  $routeProvider.otherwise({
-        redirectTo: '/'
-  });   
- 
-}]);
+app.config(['$routeProvider', function ($routeProvider) {
+
+
+        $routeProvider.when('/entidadbancaria/list', {
+            templateUrl: "./entidadbancaria/entidadbancaria-list.html",
+            controller: "ListController"
+        });
+
+        $routeProvider.when('/entidadbancaria/get/:idEntidadBancaria', {
+            templateUrl: "./entidadbancaria/entidadbancaria-get.html",
+            controller: "GetController"
+        });
+
+        $routeProvider.when('/entidadbancaria/delete/:idEntidadBancaria', {
+            templateUrl:"./entidadbancaria/entidadbancaria-delete.html",
+            controller: "DeleteController"
+        });
+        
+        $routeProvider.when('/entidadbancaria/insert', {
+           templateUrl: "./entidadbancaria/entidadbancaria-insert.html",
+           controller: "InsertController"
+        });
+
+        $routeProvider.otherwise({
+            redirectTo: '/'
+        });
+
+    }]);
