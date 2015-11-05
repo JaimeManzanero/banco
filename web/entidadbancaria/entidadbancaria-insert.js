@@ -1,41 +1,23 @@
 
-
-
-
-
-app.controller("InsertController", InsertController);
-
-function InsertController($scope, $http){
+app.controller("InsertController", ["$scope", "entidadBancariaService", function ($scope, entidadBancariaService){
     
-    function getParameterByName(name) {
-        var regexS = "[\\?&]" + name + "=([^&#]*)",
-                regex = new RegExp(regexS),
-                results = regex.exec(window.location.search);
-        if (results == null) {
-            return "";
-        } else {
-            return decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
+    $scope.entidadBancaria = {
+        nombre: "",
+        codigoEntidad: "",
+        direccion: "",
+        cif: ""
     }
     
-    var entidadBancaria = {
-        nombre: getParameterByName("nombre"),
-        codigoEntidad: getParameterByName("codigo"),
-        direccion: getParameterByName("direccion"),
-        cif: getParameterByName("cif")
-    }
+    $scope.insertar = function(){
+        var response = entidadBancariaService.insert($scope.entidadBancaria);
+        
+        response.success(function (data, status, headers, config) {
+            $scope.entidadBancaria = data;
+        }).error(function (data, status, headers, config) {
+            alert("Ha fallado la petición. Estado HTTP:" + status);
+            console.log(data);
+        }); 
+    };
     
-    $http({
-            method: "POST",
-            url: "/banco-api/api/entidadBancaria/",
-            data: entidadBancaria
-            
-        }  
-    ).success(function (data, status, headers, config) {
-        alert("Insertado");
-    }).error(function (data, status, headers, config) {
-        alert("Ha fallado la petición. Estado HTTP:" + status);
-        console.log(data);
-    });
-}
+}]);
 

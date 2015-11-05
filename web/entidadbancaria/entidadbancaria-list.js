@@ -1,6 +1,6 @@
 
 
-app.controller("ListController", ['$scope', '$http', 'entidadBancariaService', function ($scope, $http, entidadBancariaService) {
+app.controller("ListController", ['$scope', 'entidadBancariaService', function ($scope, entidadBancariaService) {
 
         var respuesta = entidadBancariaService.list();
 
