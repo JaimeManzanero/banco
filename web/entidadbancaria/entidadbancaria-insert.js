@@ -6,14 +6,16 @@ app.controller("InsertController", ["$scope", "entidadBancariaService", function
         codigoEntidad: "",
         direccion: "",
         cif: ""
-    }
+    };
     
     $scope.insertar = function(){
+        
         var response = entidadBancariaService.insert($scope.entidadBancaria);
         
-        response.success(function (data, status, headers, config) {
+        response.success(function (data) {
             $scope.entidadBancaria = data;
-        }).error(function (data, status, headers, config) {
+            alert("Entidad insertada correctamente!");
+        }).error(function (data, status) {
             alert("Ha fallado la petición. Estado HTTP:" + status);
             console.log(data);
         }); 

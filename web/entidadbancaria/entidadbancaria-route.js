@@ -21,6 +21,11 @@ app.config(['$routeProvider', function ($routeProvider) {
            templateUrl: "./entidadbancaria/entidadbancaria-insert.html",
            controller: "InsertController"
         });
+        
+        $routeProvider.when('/entidadbancaria/update/:idEntidadBancaria', {
+            templateUrl: "./entidadbancaria/entidadbancaria-update.html",
+            controller: "UpdateController"
+        });
 
         $routeProvider.otherwise({
             redirectTo: '/'

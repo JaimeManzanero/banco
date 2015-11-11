@@ -34,6 +34,14 @@ function EntidadBancariaService($http) {
         });
         return respuesta;
     }
+    
+    this.update = function (entidadBancaria) {
+        var respuesta = $http({
+           method: "PUT",
+           url: "/banco-api/api/entidadBancaria/" + entidadBancaria.idEntidadBancaria
+        });
+        return respuesta;
+    }
 }
 
 app.service("entidadBancariaService", EntidadBancariaService);
