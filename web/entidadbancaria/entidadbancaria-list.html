@@ -4,7 +4,6 @@
             <td>ID</td>
             <td>Nombre</td>
         </tr>
-
         <tr ng-repeat="entidadBancaria in entidadesBancarias | orderBy: 'idEntidadBancaria'">
             <td>{{entidadBancaria.idEntidadBancaria}}</td>
             <td><a href="#/entidadbancaria/get/{{entidadBancaria.idEntidadBancaria}}">{{entidadBancaria.nombre}}</a></td>
@@ -13,4 +12,5 @@
         </tr>
     </table>
     <a href="#/entidadbancaria/insert">Nueva Entidad</a>
+    <a href="#/main">Volver</a>
 </div>
