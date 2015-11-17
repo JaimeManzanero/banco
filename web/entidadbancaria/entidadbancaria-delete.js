@@ -1,10 +1,10 @@
 
 
-app.controller("DeleteController", ['$scope', '$http', 'entidadBancariaService', function ($scope, $http, entidadBancariaService) {
+app.controller("DeleteController", ['$scope', 'entidadBancariaService', function ($scope, entidadBancariaService) {
 
         var respuesta = entidadBancariaService.delete();
 
-        respuesta.success(function (data, status, headers, config) {
+        respuesta.success(function (data) {
             $scope.entidadBancaria = data;
         });
     }]);
